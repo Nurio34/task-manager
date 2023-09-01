@@ -1,0 +1,89 @@
+
+body {
+    display:grid;
+    justify-content: center;
+    align-content: start;
+    gap: 1rem;
+
+    h1 {
+        justify-self: center;
+    }
+
+    form {
+        display: grid;
+        justify-items: center;
+        gap: 1rem;
+        background-color: rgb(253, 217, 223);
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    #taskInp {
+        padding: 0.2rem 0.6rem;
+        border-radius: 0.2rem;
+        border: solid 1px;
+    }
+
+    .list {
+        background-color: rgb(255, 164, 255);
+        padding: 1rem;
+        border-radius: 1rem;
+
+        .task-group {
+            background-color: rgb(158, 158, 253);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.2rem;
+            
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+
+            .task {
+
+                &.complated {
+                    text-decoration: line-through;
+                    color: lightgray;
+                }
+            }
+            i{
+                cursor: pointer;
+            }
+
+            .fa-pen-to-square {
+                margin-inline-start: auto;
+            }
+        }
+    }
+
+    .editPop {
+        background-color: rgb(185, 255, 255);
+        padding: 1rem;
+        border-radius: 1rem;
+        
+        display: grid;
+        gap: 0.6rem;
+        position: absolute;
+        top: 10%;
+        left: 50%; transform: translateX(-50%);
+        display: none;
+
+        & *:not(h2,.task-group){
+            background-color: rgb(252, 226, 226);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.2rem;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        .task-group {
+            display: flex;
+            justify-content: start;
+        }
+
+        &.visible {
+            display: block;
+        }
+    }
+}
